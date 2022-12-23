@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 mongoose.set('strictQuery', "false");
 
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect("mongodb+srv://admin-vaibhav:test123@cluster0.rmkkzue.mongodb.net/todolistDB");
 
 const itemSchema = new mongoose.Schema({
     name: String
