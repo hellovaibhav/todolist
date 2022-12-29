@@ -4,9 +4,13 @@ const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
 
+const dotenv=require("dotenv");
+
 const _ = require("lodash");
 
 const app = express();
+
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -16,7 +20,7 @@ app.set('view engine', 'ejs');
 
 mongoose.set('strictQuery', "false");
 
-mongoose.connect("mongodb+srv://admin-vaibhav:test123@cluster0.rmkkzue.mongodb.net/todolistDB");
+mongoose.connect(process.env.MONGO_URI);
 
 const itemSchema = new mongoose.Schema({
     name: String
